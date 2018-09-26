@@ -14,8 +14,8 @@ class Usuarios extends CI_Model {
     public function create($data) {
         $data=array(
             'nombre_usuario' => $data['nombre_usuario'],
-            'correo' => $data['correo'],
-            'contrasena' => $data['contrasena'],
+            'usuario' => $data['email'],
+            'password' => $data['password'],
             'estatus' => 1,
             'rango' => 2,
         );
@@ -26,7 +26,7 @@ class Usuarios extends CI_Model {
     }
     
     public function select($data) {
-        $rs = $this->db->get_where('tr_usuarios', array('correo' => $data['email'],'contrasena'=>$data['password']))->result_array();
+        $rs = $this->db->get_where('tr_usuarios', array('usuario' => $data['email'],'password'=>$data['password']))->result_array();
         return $rs;
     }
 }

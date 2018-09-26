@@ -9,24 +9,23 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-
-    <title>Agregar Solicitud test</title>
-
+    <title>CREOMA</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"-->
+    <link href="<?=base_url('assets/vendor/bootstrap/css/bootstrap.min.css')?>" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="<?=base_url('assets/vendor/metisMenu/metisMenu.min.css')?>" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<?=base_url('assets/dist/css/sb-admin-2.css')?>" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="../vendor/morrisjs/morris.css" rel="stylesheet">
+    <link href="<?=base_url('assets/vendor/morrisjs/morris.css')?>" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<?=base_url('assets/vendor/font-awesome/css/font-awesome.min.css')?>" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,7 +35,6 @@
     <![endif]-->
 
 </head>
-
 <body>
 
     <div id="wrapper">
@@ -269,36 +267,38 @@
                     <ul class="nav" id="side-menu">
                         
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Inicio</a>
+                            <a href="<?=base_url('Index')?>"><i class="fa fa-dashboard fa-fw"></i> Inicio</a>
                         </li>
                         <li>
-                            <a href="clientes.html"><i class="fa fa-bar-chart-o fa-fw"></i> Clientes</a>
+                            <a href="<?=base_url('Clientes')?>"><i class="fa fa-bar-chart-o fa-fw"></i> Clientes</a>
                         </li>
                         <li>
-                            <a href="solicitudes.html"><i class="fa fa-table fa-fw"></i> Solicitudes</a>
+                            <a href="<?=base_url('Solicitudes')?>"><i class="fa fa-table fa-fw"></i> Solicitudes</a>
                         </li>
                         <li>
-                            <a href="empleados.html"><i class="fa fa-edit fa-fw"></i> Empleados</a>
+                            <a href="<?=base_url('Empleados')?>"><i class="fa fa-edit fa-fw"></i> Empleados</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Entregas</a>
+                            <a href="<?=base_url('Entregas')?>"><i class="fa fa-edit fa-fw"></i> Entregas</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Reportes</a>
+                            <a href="<?=base_url('Reportes')?>"><i class="fa fa-edit fa-fw"></i> Reportes</a>
                         </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
             </div>
-            <!-- /.navbar-static-side -->
+
         </nav>
 
         <div id="page-wrapper">
             <div class="row">
                <div class="col-lg-8">
-                    <h1 class="page-header">Agregar nueva solicitud</h1>
+                    <h1 class="page-header">Solicitudes</h1>
                     
-                	
+                	<div class="panel col-lg-12">
+						<a href="agregar-solicitud.html"><button type="button" class="btn btn-primary">Agregar nuevo</button></a>
+					</div>
 					
 							
 					<div class="col-lg-12">
@@ -309,11 +309,13 @@
                             <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
                                <div class="row">
                                		<div class="col-sm-6">
-                               			
+                               			<div class="dataTables_length" id="dataTables-example_length">
+                               				<label>Mostrar <select name="dataTables-example_length" aria-controls="dataTables-example" class="form-control input-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> registros.</label>
+                               			</div>
                                		</div>
                                		<div class="col-sm-6">
                                			<div id="dataTables-example_filter" class="dataTables_filter">
-                               				<label>Buscar un cliente:<input type="search" class="form-control input-sm" placeholder="" aria-controls="dataTables-example"></label>
+                               				<label>Buscar:<input type="search" class="form-control input-sm" placeholder="" aria-controls="dataTables-example"></label>
                                			</div>
                                		</div>
                                	</div>
@@ -321,49 +323,45 @@
                                	<div class="col-sm-12">
                                		<table width="100%" class="table table-striped table-bordered table-hover dataTable no-footer dtr-inline" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info" style="width: 100%;">
                                 <thead>
-                                    <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 160px;">Nombre</th>
-                                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 194px;">Apellido Paterno</th>
-                                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 180px;">Apellido Materno</th>
+                                    <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 160px;">Solicitud</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 194px;">Cliente</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 180px;">Aval</th>
                                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 104px;">Estatus</th>
                                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 104px;">Acciones</th></tr>
                                 </thead>
                                 <tbody>
                                 
                                 <tr class="gradeA odd" role="row">
-                                        <td class="sorting_1">Oscar</td>
-                                        <td>Ramirez</td>
-                                        <td>Rosales</td>
-                                        <td>Lista negra</td>
+                                        <td class="sorting_1">1</td>
+                                        <td>Ramon</td>
+                                        <td>Juana</td>
+                                        <td>No autorizada</td>
                                         <td>
-											<a href="form-agregar-solicitud.html"><button type="button" class="btn btn-primary btn-xs">Usar</button></a>
-                                  			<button type="button" class="btn btn-primary btn-xs">Detalles</button>
+											<button type="button" class="btn btn-primary btn-xs">Ver</button>
                                    		</td>
                                     </tr><tr class="gradeA even" role="row">
-                                        <td class="sorting_1">Oscar</td>
-                                        <td>Garcia</td>
-                                        <td>Macias</td>
-                                        <td>Vigente</td>
+                                        <td class="sorting_1">2</td>
+                                        <td>Oscar</td>
+                                        <td>Miguel</td>
+                                        <td>Pendiente</td>
                                         <td>
-											<a href="form-agregar-solicitud.html"><button type="button" class="btn btn-primary btn-xs">Usar</button></a>
-                                  			<button type="button" class="btn btn-primary btn-xs">Detalles</button>
+											<button type="button" class="btn btn-primary btn-xs">Ver</button>
                                    		</td>
                                     </tr><tr class="gradeA odd" role="row">
-                                        <td class="sorting_1">Oscar</td>
-                                        <td>Ortiz</td>
-                                        <td>Hernandez</td>
-                                        <td>Disponible</td>
+                                        <td class="sorting_1">3</td>
+                                        <td>Alejandro</td>
+                                        <td>Luisa</td>
+                                        <td>Autorizada</td>
                                         <td>
-											<a href="form-agregar-solicitud.html"><button type="button" class="btn btn-primary btn-xs">Usar</button></a>
-                                  			<button type="button" class="btn btn-primary btn-xs">Detalles</button>
+											<button type="button" class="btn btn-primary btn-xs">Ver</button>
                                    		</td>
                                     </tr><tr class="gradeA even" role="row">
-                                        <td class="sorting_1">Ramon</td>
-                                        <td>del Oscar</td>
-                                        <td>Gutierrez</td>
-                                        <td>Lista negra</td>
+                                        <td class="sorting_1">4</td>
+                                        <td>Sofía</td>
+                                        <td>Paulina</td>
+                                        <td>Entregada</td>
                                         <td>
-											<a href="form-agregar-solicitud.html"><button type="button" class="btn btn-primary btn-xs">Usar</button></a>
-                                  			<button type="button" class="btn btn-primary btn-xs">Detalles</button>
+											<button type="button" class="btn btn-primary btn-xs">Ver</button>
                                    		</td>
                                     </tr>
                                     </tbody>

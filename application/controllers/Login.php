@@ -7,18 +7,25 @@ class Login extends CI_Controller {
     public function __construct() {
         parent::__construct();
        // $this->load->helper(array('getmenu','url'));
-        $this->load->model('Usuarios');
+        $this->load->model('MUsuarios');
          //$this->load->library(array('session','form_validation'));
          //$this->load->library(array('session','form_validation'));
          $this->load->library('form_validation');
-         $this->load->helper(array('auth/login_rules'));
+         //$this->load->helper(array('auth/login_rules'));
          //$this->load->model('Auth');
     }
 
     public function index() {
         //$data['menu']=main_menu();
         //$this->load->view('login',$data);
-        $this->load->view('login');
+        
+        /*AQUI SE VA A METER LA REVISION DE LA SESION, 
+         * SI TIENE INFORMACION VA A INDEX SI NO VA A 
+         * LOGIN mientras siempre va al index*/
+        
+        $this->load->view('index');
+        
+        //$this->load->view('login');
         
     }
     public function validate(){
@@ -37,7 +44,8 @@ class Login extends CI_Controller {
            echo json_encode($errors);
            //$this->output->set_status_header(400);
        }else{
-           
+           $this->
+           $this->load->view('index');
        }
        
         
