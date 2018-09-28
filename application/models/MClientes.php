@@ -18,6 +18,7 @@ class MClientes extends CI_Model {
             'a_materno' => $data['a_materno'],
             'calle' => $data['calle'],
             'num_int' => $data['num_int'],
+            'num_ext' => $data['num_ext'],
             'entidad_nacimiento' => $data['entidad_nacimiento'],
             'municipio_nacimiento' => $data['municipio_nacimiento'],
             'localidad_radicacion' => $data['localidad_radicacion'],

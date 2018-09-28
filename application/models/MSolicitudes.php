@@ -13,33 +13,29 @@ class MSolicitudes extends CI_Model {
     
     public function create($data) {
         $data=array(
-            'nombre' => $data['nombre'],
-            'a_paterno' => $data['a_paterno'],
-            'a_materno' => $data['a_materno'],
-            'calle' => $data['calle'],
-            'num_int' => $data['num_int'],
-            'entidad_nacimiento' => $data['entidad_nacimiento'],
-            'municipio_nacimiento' => $data['municipio_nacimiento'],
-            'localidad_radicacion' => $data['localidad_radicacion'],
-            'telefono' => $data['telefono'],
-            'curp' => $data['curp'],
-            'rfc' => $data['rfc'],
-            'fecha_nacimiento' => $data['fecha_nacimiento'],
-            'estatus_cliente' => $data['estatus_cliente'],
-            'colonia' => $data['colonia'],
-            'pais_nacimiento' => $data['pais_nacimiento'],
-            'entidad_radicacion' => $data['entidad_radicacion'],
-            'municipio_radicacion' => $data['municipio_radicacion'],
-            'pais_radicacion' => $data['pais_radicacion'],
+            'folio' => $data['folio'],
+            'id_cliente' => $data['id_cliente'],
+            'id_empleado_vendedor' => $data['id_empleado_vendedor'],
+            'id_estatus_solicitud' => $data['id_estatus_solicitud'],
+            'id_tipo_solicitud' => $data['id_tipo_solicitud'],
+            'fecha_solicitud' => $data['fecha_solicitud'],
+            'fecha_control' => $data['fecha_control'],
+            'monto_solicitado' => $data['monto_solicitado'],
+            'monto_liquidar' => $data['monto_liquidar'],
+            'monto_pagado' => $data['monto_pagado'],
+            'id_empleado_supervisor' => $data['id_empleado_supervisor'],
+            'id_empleado_ejecutivo' => $data['id_empleado_ejecutivo'],
+            'id_empleado_autoriza' => $data['id_empleado_autoriza'],
+            
         );
-        if ($this->db->insert('tr_clientes',$data)) {
+        if ($this->db->insert('tr_solicitudes',$data)) {
             return true;
         }
         return true;
     }
     
     public function select($data) {
-        $rs = $this->db->get_where('tr_clientes', array('id_cliente' => $data['id_cliente']))->result_array();
+        $rs = $this->db->get_where('tr_solicitudes', array('id_solicitud' => $data['id_solicitud']))->result_array();
         return $rs;
     }
 }
