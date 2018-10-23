@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
 
@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>Agregar nuevo cliente</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -270,7 +270,7 @@
                             <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Inicio</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Clientes</a>
+                            <a href="clientes.html"><i class="fa fa-bar-chart-o fa-fw"></i> Clientes</a>
                         </li>
                         <li>
                             <a href="solicitudes.html"><i class="fa fa-table fa-fw"></i> Solicitudes</a>
@@ -279,10 +279,10 @@
                             <a href="empleados.html"><i class="fa fa-edit fa-fw"></i> Empleados</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Entregas</a>
+                            <a href="entregas.html"><i class="fa fa-edit fa-fw"></i> Entregas</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Reportes</a>
+                            <a href="reportes.html"><i class="fa fa-edit fa-fw"></i> Reportes</a>
                         </li>
                     </ul>
                 </div>
@@ -294,234 +294,66 @@
         <div id="page-wrapper">
             <div class="row">
                <div class="col-lg-8">
-                    <h1 class="page-header">Clientes</h1>
+                    <h1 class="page-header">Agregar nuevo cliente</h1>
                     
-                	<div class="panel col-lg-12">
-						<!--<a href="form-agregar-cliente.html"><button type="button" class="btn btn-primary">Agregar Cliente</button></a>-->
-						
-                                                    <!-- Boton Bootstrap Popup -->
-                                                    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Agregar Cliente</button>
-					</div>
+                	
 					
-					<!-- Large modal -->
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-			aria-hidden="true">
-			<div class="modal-dialog modal-lg">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-							×</button>
-						<h4 class="modal-title" id="myModalLabel">
-							Login/Registration - <a href="http://www.jquery2dotnet.com">jquery2dotnet.com</a></h4>
-					</div>
-					<div class="modal-body" style="height: 500px; overflow-y: scroll;">
-						<div class="row">
-							<div class="col-md-8" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;">
-								<!-- Nav tabs -->
-								<ul class="nav nav-tabs">
-									<li class="active"><a href="#Login" data-toggle="tab">Login</a></li>
-									<li><a href="#Registration" data-toggle="tab">Registration</a></li>
-								</ul>
-								<!-- Tab panes -->
-								<div class="tab-content">
-									<div class="tab-pane active" id="Login">
-										<form role="form" class="form-horizontal">
-										<div class="form-group">
-											<label for="email" class="col-sm-2 control-label">
-												Email</label>
-											<div class="col-sm-10">
-												<input type="email" class="form-control" id="email1" placeholder="Email" />
-											</div>
-										</div>
-										<div class="form-group">
-											<label for="exampleInputPassword1" class="col-sm-2 control-label">
-												Password</label>
-											<div class="col-sm-10">
-												<input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email" />
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-sm-2">
-											</div>
-											<div class="col-sm-10">
-												<button type="submit" class="btn btn-primary btn-sm">
-													Submit</button>
-												<a href="javascript:;">Forgot your password?</a>
-											</div>
-										</div>
-										</form>
-									</div>
-									<div class="tab-pane" id="Registration">
-										<form role="form" class="form-horizontal">
-										<div class="form-group">
-											<label for="email" class="col-sm-2 control-label">
-												Name</label>
-											<div class="col-sm-10">
-												<div class="row">
-													<div class="col-md-3">
-														<select class="form-control">
-															<option>Mr.</option>
-															<option>Ms.</option>
-															<option>Mrs.</option>
-														</select>
-													</div>
-													<div class="col-md-9">
-														<input type="text" class="form-control" placeholder="Name" />
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="form-group">
-											<label for="email" class="col-sm-2 control-label">
-												Email</label>
-											<div class="col-sm-10">
-												<input type="email" class="form-control" id="email" placeholder="Email" />
-											</div>
-										</div>
-										<div class="form-group">
-											<label for="mobile" class="col-sm-2 control-label">
-												Mobile</label>
-											<div class="col-sm-10">
-												<input type="email" class="form-control" id="mobile" placeholder="Mobile" />
-											</div>
-										</div>
-										<div class="form-group">
-											<label for="password" class="col-sm-2 control-label">
-												Password</label>
-											<div class="col-sm-10">
-												<input type="password" class="form-control" id="password" placeholder="Password" />
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-sm-2">
-											</div>
-											<div class="col-sm-10">
-												<button type="button" class="btn btn-primary btn-sm">
-													Save & Continue</button>
-												<button type="button" class="btn btn-default btn-sm">
-													Cancel</button>
-											</div>
-										</div>
-										</form>
-									</div>
-								</div>
-								<div id="OR" class="hidden-xs">
-									OR</div>
-							</div>
-							<div class="col-md-4">
-								<div class="row text-center sign-with">
-									<div class="col-md-12">
-										<h3>
-											Sign in with</h3>
-									</div>
-									<div class="col-md-12">
-										<div class="btn-group btn-group-justified">
-											<a href="#" class="btn btn-primary">Facebook</a> <a href="#" class="btn btn-danger">
-												Google</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 							
 					<div class="col-lg-12">
                     <div class="panel panel-default">
                         
-                        <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                               <div class="row">
-                               		<div class="col-sm-6">
-                               			<div class="dataTables_length" id="dataTables-example_length">
-                               				<label>Mostrar <select name="dataTables-example_length" aria-controls="dataTables-example" class="form-control input-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> registros.</label>
-                               			</div>
-                               		</div>
-                               		<div class="col-sm-6">
-                               			<div id="dataTables-example_filter" class="dataTables_filter">
-                               				<label>Buscar:<input type="search" class="form-control input-sm" placeholder="" aria-controls="dataTables-example"></label>
-                               			</div>
-                               		</div>
-                               	</div>
-                               	<div class="row">
-                               	<div class="col-sm-12">
-                               		<table width="100%" class="table table-striped table-bordered table-hover dataTable no-footer dtr-inline" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info" style="width: 100%;">
-                                <thead>
-                                    <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 160px;">Nombre</th>
-                                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 194px;">Curp</th>
-                                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 180px;">Estatus</th>
-                                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 104px;">Acciones</th></tr>
-                                </thead>
-                                <tbody>
-                                
-                                <tr class="gradeA odd" role="row">
-                                        <td class="sorting_1">Oscar</td>
-                                        <td>Text</td>
-                                        <td>Prestamo S13</td>
-                                        <td>
-											<button type="button" class="btn btn-primary btn-xs">Editar</button>
-                                  			<button type="button" class="btn btn-primary btn-xs">Historico</button>
-                                   		</td>
-                                    </tr><tr class="gradeA even" role="row">
-                                        <td class="sorting_1">Alejandro</td>
-                                        <td>Text</td>
-                                        <td>Solicitud Pendiente</td>
-                                        <td>
-											<button type="button" class="btn btn-primary btn-xs">Editar</button>
-                                  			<button type="button" class="btn btn-primary btn-xs">Historico</button>
-                                   		</td>
-                                    </tr><tr class="gradeA odd" role="row">
-                                        <td class="sorting_1">Oscar</td>
-                                        <td>Text</td>
-                                        <td>Lista Negra</td>
-                                        <td>
-											<button type="button" class="btn btn-primary btn-xs">Editar</button>
-                                  			<button type="button" class="btn btn-primary btn-xs">Historico</button>
-                                   		</td>
-                                    </tr><tr class="gradeA even" role="row">
-                                        <td class="sorting_1">Oscar</td>
-                                        <td>Text</td>
-                                        <td>Sin prestamo</td>
-                                        <td>
-											<button type="button" class="btn btn-primary btn-xs">Editar</button>
-                                  			<button type="button" class="btn btn-primary btn-xs">Historico</button>
-                                   		</td>
-                                    </tr>
-                                    </tbody>
-                            </table>
+                            <div class="row">
+                               
+                               <form role="form">
+							 	<div class="col-lg-6">
+                                    
+                                        <div class="form-group">
+                                            <label>Nombre</label>
+                                            <input class="form-control">
+                                            <p class="help-block">Introduce correctamente tu nombre.</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Apellido Paterno</label>
+                                            <input class="form-control">
+                                            <p class="help-block">Introduce correctamente tu apellido paterno.</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Apellido Materno</label>
+                                            <input class="form-control">
+                                            <p class="help-block">Introduce correctamente tu apellido materno.</p>
+                                        </div>
+                                        
+                                        
+                                        
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                                <div class="col-lg-6">
+                                    
+                                    	<div class="form-group">
+                                            <label>Calle</label>
+                                            <input class="form-control">
+                                            <p class="help-block">Introduce correctamente tu calle y colonia.</p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>No/int</label>
+                                            <input class="form-control">
+                                            <p class="help-block">Introduce correctamente el numero o interior.</p>
+                                        </div>
+                                    	<div class="form-group">
+                                            <label>Entidad</label>
+                                            <input class="form-control">
+                                            <p class="help-block">Introduce correctamente el numero o interior.</p>
+                                        </div>
+                                    
+                                    <button type="submit" class="btn btn-default">Guardar</button>
+                                    <button type="submit" class="btn btn-default">Cancelar</button>
+                                    
+                                </div>
+                                <!-- /.col-lg-6 (nested) -->
+                                </form>
                             </div>
-                            	</div>
-                            		<div class="row">
-                            			<div class="col-sm-6">
-                            				<div class="dataTables_info" id="dataTables-example_info" role="status" aria-live="polite">Mostrando del 1 al 10 de 4 registros.</div>
-                            				</div>
-                            			<div class="col-sm-6">
-                            				<div class="dataTables_paginate paging_simple_numbers" id="dataTables-example_paginate">	<ul class="pagination">
-                            						<li class="paginate_button previous disabled" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_previous">
-                            							<a href="#">Anterior</a>
-                            						</li>
-                            						<li class="paginate_button active" aria-controls="dataTables-example" tabindex="0">
-                            							<a href="#">1</a>
-                            						</li>
-                            						<li class="paginate_button " aria-controls="dataTables-example" tabindex="0">
-                            							<a href="#">2</a>
-                            						</li>
-                            						<li class="paginate_button " aria-controls="dataTables-example" tabindex="0">
-                            							<a href="#">3</a>
-                            						</li>
-                            						<li class="paginate_button next" aria-controls="dataTables-example" tabindex="0" id="dataTables-example_next">
-                            							<a href="#">Siguiente</a>
-                            						</li>
-                            					</ul>
-                            				</div>
-                            			</div>
-                            		</div>
-                            	</div>
-                            <!-- /.table-responsive -->
-                            
+                            <!-- /.row (nested) -->
                         </div>
                         <!-- /.panel-body -->
                     </div>
@@ -536,6 +368,7 @@
             
 
     </div>
+</div>
     <!-- /#wrapper -->
 
     <!-- jQuery -->

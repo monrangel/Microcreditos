@@ -294,14 +294,210 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <h1 class="page-header">Clientes</h1>
-                        <?= isset($msg) ? $msg : ''?>
 
                         <div class="panel col-lg-12">
-                            <script src="<?= base_url('assets/vendor/raphael/raphael.min.js') ?>"></script>
-                            <a href="<?= base_url('AgregarCliente')?>"<button type="button" class="btn btn-primary">Agregar Cliente</button></a>
+                            <!--a href="form-agregar-cliente.html"><button type="button" class="btn btn-primary">Agregar Cliente</button></a-->
+                            <!-- Boton Bootstrap Popup -->
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Agregar Cliente</button>
                         </div>
-                        
-                         <div class="col-lg-12">
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                             aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                            ×</button>
+                                        <h4 class="modal-title" id="myModalLabel">
+                                            Login/Registration - <a href="http://www.jquery2dotnet.com">jquery2dotnet.com</a></h4>
+                                    </div>
+                                    <div class="modal-body" style="height: 500px; overflow-y: scroll;">
+                                        <div class="row">
+                                            <div class="col-md-8" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;">
+                                                <!-- Nav tabs -->
+                                                <ul class="nav nav-tabs">
+                                                    <!--li class="active"><a href="#Login" data-toggle="tab">Login</a></li-->
+                                                    <li><a href="#NuevoCliente" data-toggle="tab">Nuevo Cliente</a></li>
+                                                </ul>
+                                                <!-- Tab panes -->
+                                                <div class="tab-content">
+                                                    <div class="tab-pane" id="NuevoCliente">
+                                                        <form role="form" class="form-horizontal">
+                                                            <div class="form-group">
+                                                                <label for="nombre" class="col-sm-2 control-label">
+                                                                    Nombre:</label>
+                                                                <div class="col-sm-10">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-10">
+                                                                            <input type="text" class="form-control" id="nombre" placeholder="Nombre" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="a_paterno" class="col-sm-2 control-label">
+                                                                    Apellido Paterno:</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" id="a_paterno" placeholder="Apellido Paterno" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="a_materno" class="col-sm-2 control-label">
+                                                                    Apellido Materno:</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" id="a_materno" placeholder="Apellido Materno" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="a_paterno" class="col-sm-2 control-label">
+                                                                    Calle:</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" id="calle" placeholder="Calle" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="num_int" class="col-sm-2 control-label">
+                                                                    Numero Interior:</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" id="num_int" placeholder="Numero Interior" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="a_paterno" class="col-sm-2 control-label">
+                                                                    Numero Exterior:</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" id="num_ext" placeholder="Numero Exterior" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="entidad_nacimiento" class="col-sm-2 control-label">
+                                                                    Entidad de Nacimiento:</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" id="entidad_nacimiento" placeholder="Entidad de Nacimiento" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="municipio_nacimiento" class="col-sm-2 control-label">
+                                                                    Municipio de nacimiento:</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" id="municipio_nacimiento" placeholder="Municipío de Nacimiento" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="localidad_radicacion" class="col-sm-2 control-label">
+                                                                    Localidad donde vive:</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" id="localidad_radicacion" placeholder="Localidad donde vive" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="telefono" class="col-sm-2 control-label">
+                                                                    Telefono</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" id="telefono" placeholder="Telefono" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="curp" class="col-sm-2 control-label">
+                                                                    CURP:</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" id="curp" placeholder="CURP" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="rfc" class="col-sm-2 control-label">
+                                                                    RFC:</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" id="rfc" placeholder="RFC" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="fecha_nacimiento" class="col-sm-2 control-label">
+                                                                    Fecha de Nacimiento:</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" id="fecha_nacimiento" placeholder="Fecha de Nacimiento" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="estatus_cliente" class="col-sm-2 control-label">
+                                                                    Estatus Cliente:</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="hidden" class="form-control" id="estatus_cliente" placeholder="Estatus Cliente" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="colonia" class="col-sm-2 control-label">
+                                                                    Colonia:</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" id="colonia" placeholder="Colonia" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="pais_nacimiento" class="col-sm-2 control-label">
+                                                                    Nacionalidad:</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" id="pais_nacimiento" placeholder="Nacionalidad" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="entidad_radicacion" class="col-sm-2 control-label">
+                                                                    Entidad donde vive:</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" id="entidad_radicacion" placeholder="Entidad donde vive" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="municipio_radicacion" class="col-sm-2 control-label">
+                                                                    Municipio donde vive:</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" id="municipio_radicacion" placeholder="Municipio donde vive" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="pais_radicacion" class="col-sm-2 control-label">
+                                                                    País donde vive:</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" id="a_paterno" placeholder="Pais donde vive" />
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            
+                                                            <div class="row">
+                                                                <div class="col-sm-2">
+                                                                </div>
+                                                                <div class="col-sm-10">
+                                                                    <button type="button" class="btn btn-primary btn-sm">
+                                                                        Save & Continue</button>
+                                                                    <button type="button" class="btn btn-default btn-sm">
+                                                                        Cancel</button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div id="OR" class="hidden-xs">
+                                                    OR</div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="row text-center sign-with">
+                                                    <div class="col-md-12">
+                                                        <h3>
+                                                            Sign in with</h3>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="btn-group btn-group-justified">
+                                                            <a href="#" class="btn btn-primary">Facebook</a> <a href="#" class="btn btn-danger">
+                                                                Google</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
                             <div class="panel panel-default">
 
                                 <!-- /.panel-heading -->
