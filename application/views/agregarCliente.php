@@ -337,17 +337,39 @@
 
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Pais Nacimiento</label>
-                                                    <input class="form-control" name="pais_nacimiento">
+                                                    <label>País Nacimiento</label>
+                                                    <select class="form-control" name="pais_nacimiento" id="pais_nacimiento">
+                                                        <option>Selecciona el país...</option>
+                                                        <?php 
+                                                        foreach ($paises as $row){
+                                                            echo '<option value="'.$row->id_pais.'">'.$row->descripcion.'</option>';
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                    <!--label>Pais Nacimiento</label>
+                                                    <input class="form-control" name="pais_nacimiento"-->
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Entidad de Nacimiento</label>
-                                                    <input class="form-control" name="entidad_nacimiento">
+                                                    <label>Entidad Nacimiento</label>
+                                                    <select class="form-control" name="entidad_nacimiento" id="entidad_nacimiento">
+                                                        <option>Selecciona la entidad de nacimiento...</option>
+                                                        <?php 
+                                                        foreach ($entidades as $row){
+                                                            echo '<option value="'.$row->id_entidad.'">'.$row->descripcion.'</option>';
+                                                        }
+                                                        ?>
+                                                    </select>
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Municipio Nacimiento</label>
-                                                    <input class="form-control" name="municipio_nacimiento">
-
+                                                    <select class="form-control" name="municipio_nacimiento" id="municipio_nacimiento">
+                                                        <option>Selecciona el municipio de nacimiento...</option>
+                                                        <?php 
+                                                        foreach ($municipios as $row){
+                                                            echo '<option value="'.$row->id_municipio.'">'.$row->descripcion.'</option>';
+                                                        }
+                                                        ?>
+                                                    </select>
                                                 </div>
 
 
@@ -439,12 +461,27 @@
 
             <!-- Morris Charts JavaScript -->
             <script src="<?= base_url('assets/vendor/raphael/raphael.min.js') ?>"></script>
-            <script src="<?= base_url('assets/vendor/morrisjs/morris.min.js') ?>"></script>
-            <script src="<?= base_url('assets/data/morris-data.js') ?>"></script>
+            
 
             <!-- Custom Theme JavaScript -->
             <script src="<?= base_url('assets/dist/js/sb-admin-2.js') ?>"></script>
-
+            <script>
+            $(document).ready(function(){
+                $('#pais_nacimiento').change(function(){
+                    var id_pais=$('#pais_nacimiento').val();
+                    if(id_pais!=''){
+                        $.ajax({
+                            url:"<?php echo base_url();?>agregarCliente/trae_entidades",
+                            method:"POST",
+                            data:{id_pais:id_pais},
+                            succes:function(data){
+                                $('#entidad_nacimiento').html(data);
+                            }        
+                        })
+                    }
+                });
+            });
+            </script>
     </body>
 
 </html>
