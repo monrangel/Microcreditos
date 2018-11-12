@@ -11,6 +11,26 @@ class MClientes extends CI_Model {
         //parent::__construct();
     }
     
+    function trae_paises(){
+        echo ("Entra a trae paises en el modelo");
+        $this->db->order_by('descripcion','ASC');
+        $query=$this->db->get('tc_paises');
+        return $query->result();
+    }
+    function trae_entidades($id_pais){
+        echo 'SIIII';
+        echo $id_pais;
+        $this->db->where('pais',$id_pais);
+         $this->db->order_by('entidad','ASC');
+        $query=$this->db->get('tc_entidades');
+        $output='<option value="">Selecciona la entidad...</option>';
+        foreach ($query->result() as $row){
+            $output.='<option value="'.$row->id_entidad.'">'.$row->entidad.'</option>';
+        }
+        return $output;
+    }
+    
+    
     public function create($data) {
         $data=array(
             'nombre' => $data['nombre'],

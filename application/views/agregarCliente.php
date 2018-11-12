@@ -467,11 +467,15 @@
             <script src="<?= base_url('assets/dist/js/sb-admin-2.js') ?>"></script>
             <script>
             $(document).ready(function(){
+                
                 $('#pais_nacimiento').change(function(){
+                    
                     var id_pais=$('#pais_nacimiento').val();
+                      alert (id_pais);
                     if(id_pais!=''){
+                       
                         $.ajax({
-                            url:"<?php echo base_url();?>agregarCliente/trae_entidades",
+                            url:"<?php echo base_url();?>AgregarCliente/trae_entidades",
                             method:"POST",
                             data:{id_pais:id_pais},
                             succes:function(data){

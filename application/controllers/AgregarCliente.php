@@ -14,8 +14,21 @@ class AgregarCliente extends CI_Controller{
     }
     public function index() {
         //$query = $this->db->get('tr_clientes');
-        $this->load->view('agregarCliente');   
-        
+        //$this->load->view('agregarCliente');   
+        $data['paises']=$this->MClientes->trae_paises();
+        //$data['entidades']=$this->MClientes->trae_entidades();
+        //$data['municipios']=$this->MClientes->trae_municipios();
+        $this->load->view('agregarCliente',$data);
+    }
+    
+    function trae_entidades(){
+        echo 'Si entra al controller';
+        echo $this->input->post('id_pais');
+        if($this->input->post('id_pais')){
+            echo 'Si entra';
+            echo $this->MClientes->trae_entidades($this->input-post('id_pais'));
+            
+        }
     }
     
     public function create(){
